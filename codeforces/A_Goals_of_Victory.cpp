@@ -7,8 +7,20 @@ using namespace std;
 
 void solve() {
     ll n; cin>>n;
+    n--;
+
     vector<ll> v(n);
     for(ll i=0; i<n; i++) cin>>v[i];
+    ll positive = 0;
+    ll negative = 0;
+    for(ll i=0; i<n; i++){
+        if(v[i]>0) positive+=v[i];
+        else negative+=v[i];
+
+    }
+    ll res = positive+negative;
+
+    cout<<-res<<endl;
 
 
 

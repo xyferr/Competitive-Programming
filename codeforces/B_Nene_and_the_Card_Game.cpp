@@ -7,8 +7,17 @@ using namespace std;
 
 void solve() {
     ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    unordered_map<ll,ll> mp;
+    for(ll i=0; i<n; i++) {
+        ll x; cin>>x;
+        mp[x]++;
+    }
+    ll count=0;
+    for(auto it: mp){
+        if(it.second==2) count++;
+    }
+
+    cout<<count<<endl;
 
 
 
@@ -24,8 +33,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int T = 1; 
-    cin >> T;
+    int T = 1; cin >> T;
     while(T--) {
         solve();
     }

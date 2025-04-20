@@ -2,20 +2,23 @@
 #define ll long long
 using namespace std;
 
-
+// const int N = 1e9+1;
 
 
 void solve() {
-    string s; cin>>s;
-    ll a=0 , b=0;
+    ll n,m; cin>>n>>m;
 
-    for(ll i=0; i<5; i++){
-        if(s[i]=='A') a++;
-        else b++;
+    // vector<ll> v(N);
+    // for(ll i=0; i<=N; i++) {
+    //     v[i] = i;
+    // }
+    ll ans = n;
+    for(ll i=n; i<=n+m; ++i){
+        ans|=i;
     }
-    if(a>b) cout<<"A"<<'\n';
-    else if(b>a) cout<<"B"<<'\n';
- 
+    cout<<ans<<endl;
+
+
 
 
 

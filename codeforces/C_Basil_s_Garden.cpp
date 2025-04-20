@@ -6,23 +6,15 @@ using namespace std;
 
 
 void solve() {
-    ll n,k; cin>>n>>k;
+    ll n; cin>>n;
     vector<ll> v(n);
     for(ll i=0; i<n; i++) cin>>v[i];
-
-    sort(v.begin(),v.end());
-    vector<ll> pref(n+1);
-    for(ll i=0; i<n; i++){
-        pref[i+1]=pref[i]+v[i];
+    vector<int> dp(n, 0);
+    dp[n-1]=v[n-1];
+    for(int i=n-2; i>=0; i--) {
+        dp[i]=max(v[i], ((dp[i+1]-v[i])+v[i]+1));
     }
-
-    ll ans = 0;
-    for(ll i=0; i<=k; i++){
-        ans = max(ans , pref[n-k+i]-pref[2*i]);
-    }
-    
-    cout<<ans<<'\n';
-
+    cout<<dp[0]<<endl;
 
 
 

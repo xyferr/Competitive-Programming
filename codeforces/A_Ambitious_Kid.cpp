@@ -9,9 +9,16 @@ void solve() {
     ll n; cin>>n;
     vector<ll> v(n);
     for(ll i=0; i<n; i++) cin>>v[i];
+    ll minimum_positive = INT_MAX;
+    for(ll i=0; i<n; i++){
+        minimum_positive = min(minimum_positive,abs(v[i]));
+    }
+    cout<<minimum_positive<<endl;
+    
 
 
 
+    
 
 }
 
@@ -25,7 +32,7 @@ int main(){
     cin.tie(NULL);
     cout.tie(NULL);
     int T = 1; 
-    cin >> T;
+    // cin >> T;
     while(T--) {
         solve();
     }

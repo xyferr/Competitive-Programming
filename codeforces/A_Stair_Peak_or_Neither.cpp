@@ -6,10 +6,16 @@ using namespace std;
 
 
 void solve() {
-    ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
-
+    ll a,b,c; cin>>a>>b>>c;
+    if(c>b and b>a){
+        cout<<"STAIR\n";
+    }
+    else if(c<b && b>a){
+        cout<<"PEAK\n";
+    }
+    else{
+        cout<<"NONE\n";
+    }
 
 
 
@@ -24,8 +30,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int T = 1; 
-    cin >> T;
+    int T = 1; cin >> T;
     while(T--) {
         solve();
     }

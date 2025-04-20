@@ -7,8 +7,18 @@ using namespace std;
 
 void solve() {
     ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    map<ll,ll> mp;
+    for(int i=0; i<n; i++){
+        ll x; cin>>x;
+        mp[x]++;
+    }
+    ll ans=0;
+
+    for(auto it: mp){
+        ans += it.second/3;
+    }
+
+    cout<<ans<<endl;
 
 
 
@@ -24,8 +34,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int T = 1; 
-    cin >> T;
+    int T = 1; cin >> T;
     while(T--) {
         solve();
     }

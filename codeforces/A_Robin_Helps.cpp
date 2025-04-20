@@ -6,9 +6,19 @@ using namespace std;
 
 
 void solve() {
-    ll n; cin>>n;
+    ll n,k; cin>>n>>k;
     vector<ll> v(n);
     for(ll i=0; i<n; i++) cin>>v[i];
+    ll res=0;
+    ll rob=0;
+    for(auto  it:v){
+        if(it>=k) rob+=it;
+        else if(it==0 && rob>0){
+            rob--;
+            res++;
+        }
+    }
+    cout<<res<<endl;
 
 
 
@@ -24,8 +34,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int T = 1; 
-    cin >> T;
+    int T = 1; cin >> T;
     while(T--) {
         solve();
     }

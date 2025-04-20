@@ -3,21 +3,20 @@
 using namespace std;
 
 
-
-
 void solve() {
-    ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    ll n,k,x; cin>>n>>k>>x;
 
-
-
-
+    ll minimum_sum = k*(k+1)/2;
+    ll maximum_sum = n*(n+1)/2 - (n-k)*(n-k+1)/2;
+    if(x<=maximum_sum && x>=minimum_sum){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+    
+    
 }
-
-
-
-
 
 
 int main(){

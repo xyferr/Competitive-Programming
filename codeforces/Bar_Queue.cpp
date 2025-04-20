@@ -7,8 +7,17 @@ using namespace std;
 
 void solve() {
     ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    string s; cin>>s;
+    ll girl = 0,boys = 0;
+    for(auto it: s){
+        if(it=='G') girl++;
+        else boys++;
+        if(boys>(2*girl)){
+            cout<<girl+boys<<endl;
+            return;
+        }
+    }
+    cout<<girl+boys<<endl;
 
 
 

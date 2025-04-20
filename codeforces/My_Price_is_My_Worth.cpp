@@ -2,17 +2,19 @@
 #define ll long long
 using namespace std;
 
-
+int count(int num){
+    int cnt=0;
+    while(num){
+        cnt++;
+        num/=10;
+    }
+    if(cnt>9) return count(cnt);
+}
 
 
 void solve() {
     ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
-
-
-
-
+    cout<<count(n)<<'\n';
 }
 
 
@@ -25,7 +27,7 @@ int main(){
     cin.tie(NULL);
     cout.tie(NULL);
     int T = 1; 
-    cin >> T;
+    // cin >> T;
     while(T--) {
         solve();
     }

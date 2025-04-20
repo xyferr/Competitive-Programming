@@ -10,6 +10,17 @@ void solve() {
     vector<ll> v(n);
     for(ll i=0; i<n; i++) cin>>v[i];
 
+    ll xor_sum = 0;
+    for(ll i=0; i<n; i++) {
+        xor_sum ^= v[i];
+        if(xor_sum == 0) {
+            cout<<xor_sum<<endl;
+            return;
+        }
+    }
+
+    cout<<xor_sum<<endl;
+
 
 
 
