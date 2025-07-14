@@ -1,15 +1,25 @@
 #include<bits/stdc++.h>
 #define ll long long
-#define endl "\n"   
 using namespace std;
 
 
 
 
 void solve() {
-    ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    ll n,x; cin>>n>>x;
+    if(n==1){
+        cout<<0<<endl;
+        return;
+    }
+    for(ll i=0; i<n; i++){
+        if(i!=x) cout<<i<<" ";
+    }
+    if(x!=(n)) cout<<x<<endl;
+    else{
+        cout<<endl;
+    }
+    // cout<<endl;
+    
 
 
 

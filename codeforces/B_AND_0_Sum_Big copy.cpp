@@ -4,12 +4,19 @@
 using namespace std;
 
 
-
+ll mod = 1e9+7;
 
 void solve() {
-    ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    ll n,k; cin>>n>>k;
+    ll inc =k-1;
+    ll res=n;
+    while(inc>0){
+        res = res*n;
+        res = res%mod;
+        inc--;
+    }
+    cout<<res<<endl;
+
 
 
 

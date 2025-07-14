@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 #define ll long long
-#define endl "\n"   
 using namespace std;
 
 
@@ -8,8 +7,22 @@ using namespace std;
 
 void solve() {
     ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    if(n<=3){
+        cout<<-1<<endl;
+        return;
+    }
+    while(true){
+        if(2*n<(n+n-1+n-2)){
+            cout<<(n+n-1+n-2)<<endl;
+            return;
+        }
+        if(n<=3){
+            break;
+        }
+        n--;
+    }
+    
+    cout<<-1<<endl;
 
 
 

@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 #define ll long long
-#define endl "\n"   
 using namespace std;
 
 
@@ -8,8 +7,23 @@ using namespace std;
 
 void solve() {
     ll n; cin>>n;
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
+    string s; cin>>s;
+    ll cnt=0;
+    for(auto i:s){
+        if(i=='1'){
+            cnt++;
+        }
+    }
+    ll res = 0;
+    for(auto it:s){
+        if(it=='1'){
+            res+=(cnt-1);
+        }
+        else{
+            res+=cnt+1;
+        }
+    }
+    cout<<res<<endl;
 
 
 

@@ -1,37 +1,29 @@
-#include<bits/stdc++.h>
-#define ll long long
+#include <bits/stdc++.h>
 using namespace std;
-
-
-
-
-void solve() {
-    ll n; cin>>n;
-    
-
-    vector<ll> v(n);
-    for(ll i=0; i<n; i++) cin>>v[i];
-    
-
-
-
-
-}
-
-
-
-
-
-
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int T = 1; 
-    cin >> T;
-    while(T--) {
-        solve();
+    
+
+    const int MAXK = 26;
+    vector<long long> dp(MAXK+1);
+    dp[0] = 1; 
+    dp[1] = 2; 
+    for(int i = 2; i <= MAXK; i++){
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    int T;
+    if(!(cin >> T)) return 0;
+    while(T--){
+        long long N;
+        cin >> N;
+        int ans = -1;
+        for(int k = 1; k <= MAXK; k++){
+           
+            if(dp[k] - 1 >= N){
+                ans = k;
+                break;
+            }
+        }
+        cout << ans << "\n";
     }
     return 0;
 }
-
