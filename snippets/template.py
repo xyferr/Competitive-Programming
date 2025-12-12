@@ -35,7 +35,5 @@ mod=1000000007
 t=int(input())
 while(t):
     n=int(input())
-    l=[]
-    for i in range(n):
-        l.append(input())
+    l=seq()
     t-=1    

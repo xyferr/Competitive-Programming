@@ -1,13 +1,13 @@
-def powr(x, y):
-    res = 1
-    while y > 0:
-        print(x, y, res)
-        if y%2==1:
-            res *= x
-        x*=x
-        y=y//2
-    return res
+import math
+div=2
+res=2
+n=600851475143
+temp=n
+while div<=math.sqrt(n):
+    if temp%div==0:
+        res=div
+        temp//=div
+    else:
+        div+=1
 
-print(powr(2, 5))
-
-
+print(res)

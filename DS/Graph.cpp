@@ -83,7 +83,6 @@ void dfs(int start_node, int n, const std::vector<std::vector<int>>& adj) {
 std::vector<ll> dijkstra(int start_node, int n, const std::vector<std::vector<pll>>& adj) {
     std::vector<ll> dist(n + 1, INF_LL);
     dist[start_node] = 0;
-    vector<ll> parent(n + 1, -1); // Optional: to reconstruct the path
     
     // Min-priority queue storing {distance, node}
     std::priority_queue<pll, std::vector<pll>, std::greater<pll>> pq;
@@ -103,7 +102,6 @@ std::vector<ll> dijkstra(int start_node, int n, const std::vector<std::vector<pl
             ll weight = edge.second;
             if (dist[u] + weight < dist[v]) {
                 dist[v] = dist[u] + weight;
-                parent[v] = u; // Optional: store the parent node
                 pq.push({dist[v], v});
             }
         }

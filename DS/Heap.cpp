@@ -76,6 +76,15 @@ void solve() {
     itemMaxH.push({1, 50});
     itemMaxH.push({2, 100});
     std::cout << "Max value item ID: " << itemMaxH.top().id << std::endl; // 2
+
+    // extract k numbers from a priority queue
+    int k = 2;
+    std::cout << "Extracting top " << k << " from Max-Heap:" << std::endl;
+    while (k-- && !itemMaxH.empty()) {
+        std::cout << "Item ID: " << itemMaxH.top().id << ", Value: " << itemMaxH.top().value << std::endl;
+        itemMaxH.pop();
+    }
+
 }
 
 int main() {
